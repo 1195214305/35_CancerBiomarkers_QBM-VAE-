@@ -20,7 +20,7 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
     )
   }
 
-  const { algorithms, metrics, survivalCurves, featureImportance } = results
+  const { algorithms, survivalCurves, featureImportance } = results
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
