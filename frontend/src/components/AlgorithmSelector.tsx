@@ -81,7 +81,7 @@ export default function AlgorithmSelector({ data, onResultsReady, apiKey }: Algo
         <h2 className="text-2xl font-bold text-white mb-6">算法选择与对比</h2>
 
         {!data && (
-          <div className="text-center py-12 text-slate-400">
+          <div className="text-center py-12 text-gray-400">
             <Brain className="w-16 h-16 mx-auto mb-4 opacity-50" />
             <p>请先上传数据</p>
           </div>
@@ -99,7 +99,7 @@ export default function AlgorithmSelector({ data, onResultsReady, apiKey }: Algo
                   className={`p-6 rounded-lg border-2 transition-all text-left ${
                     selectedAlgorithms.includes(algo.id)
                       ? `border-${algo.color}-500 bg-${algo.color}-500/20`
-                      : 'border-slate-600 bg-slate-700/30 hover:border-slate-500'
+                      : 'border-slate-600 bg-slate-700/30 hover:border-gray-500'
                   } ${running ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                   <div className="flex items-start gap-3">
@@ -108,7 +108,7 @@ export default function AlgorithmSelector({ data, onResultsReady, apiKey }: Algo
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold text-white mb-1">{algo.name}</h3>
-                      <p className="text-sm text-slate-400">{algo.desc}</p>
+                      <p className="text-sm text-gray-400">{algo.desc}</p>
                     </div>
                     {selectedAlgorithms.includes(algo.id) && (
                       <div className={`w-6 h-6 rounded-full bg-${algo.color}-500 flex items-center justify-center`}>
@@ -126,7 +126,7 @@ export default function AlgorithmSelector({ data, onResultsReady, apiKey }: Algo
             <button
               onClick={runComparison}
               disabled={running || selectedAlgorithms.length === 0}
-              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-700 disabled:text-slate-500 text-white font-medium py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-3"
+              className="w-full bg-primary hover:bg-secondary disabled:bg-slate-700 disabled:text-gray-500 text-white font-medium py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-3"
             >
               {running ? (
                 <>
@@ -146,7 +146,7 @@ export default function AlgorithmSelector({ data, onResultsReady, apiKey }: Algo
               <div className="mt-4">
                 <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-blue-500 transition-all duration-300"
+                    className="h-full bg-primary transition-all duration-300"
                     style={{ width: `${progress}%` }}
                   />
                 </div>

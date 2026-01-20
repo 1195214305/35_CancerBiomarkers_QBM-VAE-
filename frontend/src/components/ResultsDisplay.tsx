@@ -10,7 +10,7 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
     return (
       <div className="max-w-6xl mx-auto">
         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-8">
-          <div className="text-center py-12 text-slate-400">
+          <div className="text-center py-12 text-gray-400">
             <TrendingUp className="w-16 h-16 mx-auto mb-4 opacity-50" />
             <p>暂无对比结果</p>
             <p className="text-sm mt-2">请先上传数据并运行算法对比</p>
@@ -39,19 +39,19 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-slate-400">C-index</span>
+                  <span className="text-gray-400">C-index</span>
                   <span className="text-white font-mono">{algo.cIndex.toFixed(4)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-400">AUC</span>
+                  <span className="text-gray-400">AUC</span>
                   <span className="text-white font-mono">{algo.auc.toFixed(4)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-400">准确率</span>
+                  <span className="text-gray-400">准确率</span>
                   <span className="text-white font-mono">{(algo.accuracy * 100).toFixed(2)}%</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-400">运行时间</span>
+                  <span className="text-gray-400">运行时间</span>
                   <span className="text-white font-mono flex items-center gap-1">
                     <Clock className="w-3 h-3" />
                     {algo.time}s
@@ -121,11 +121,11 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
           <div className="space-y-3">
             {featureImportance.slice(0, 10).map((feature: any, idx: number) => (
               <div key={idx} className="flex items-center gap-4">
-                <div className="w-32 text-sm text-slate-400 font-mono">{feature.gene}</div>
+                <div className="w-32 text-sm text-gray-400 font-mono">{feature.gene}</div>
                 <div className="flex-1">
                   <div className="h-8 bg-slate-700 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-end pr-3"
+                      className="h-full bg-gradient-to-r from-primary to-purple-500 flex items-center justify-end pr-3"
                       style={{ width: `${feature.importance * 100}%` }}
                     >
                       <span className="text-xs text-white font-medium">
@@ -145,24 +145,24 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
         <h2 className="text-2xl font-bold text-white mb-6">数据集统计</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-slate-700/30 rounded-lg p-6 border border-slate-600">
-            <Database className="w-8 h-8 text-blue-400 mb-3" />
+            <Database className="w-8 h-8 text-primary mb-3" />
             <div className="text-2xl font-bold text-white mb-1">{results.stats.samples}</div>
-            <div className="text-sm text-slate-400">样本数量</div>
+            <div className="text-sm text-gray-400">样本数量</div>
           </div>
           <div className="bg-slate-700/30 rounded-lg p-6 border border-slate-600">
             <Database className="w-8 h-8 text-green-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">{results.stats.features}</div>
-            <div className="text-sm text-slate-400">基因特征</div>
+            <div className="text-sm text-gray-400">基因特征</div>
           </div>
           <div className="bg-slate-700/30 rounded-lg p-6 border border-slate-600">
             <Database className="w-8 h-8 text-purple-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">{results.stats.events}</div>
-            <div className="text-sm text-slate-400">事件数</div>
+            <div className="text-sm text-gray-400">事件数</div>
           </div>
           <div className="bg-slate-700/30 rounded-lg p-6 border border-slate-600">
             <Database className="w-8 h-8 text-orange-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">{results.stats.censored}</div>
-            <div className="text-sm text-slate-400">删失数</div>
+            <div className="text-sm text-gray-400">删失数</div>
           </div>
         </div>
       </div>

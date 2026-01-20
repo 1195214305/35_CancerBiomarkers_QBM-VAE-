@@ -24,23 +24,23 @@ export default function SettingsPanel({ apiKey, onApiKeyChange }: SettingsPanelP
         {/* 千问 API Key 配置 */}
         <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-slate-300 mb-3">
+            <label className="block text-sm font-medium text-gray-300 mb-3">
               千问 API Key
             </label>
             <div className="flex gap-3">
               <div className="flex-1 relative">
-                <Key className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                <Key className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="password"
                   value={localKey}
                   onChange={(e) => setLocalKey(e.target.value)}
                   placeholder="请输入您的千问 API Key"
-                  className="w-full bg-slate-700/50 border border-slate-600 rounded-lg pl-11 pr-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full bg-slate-700/50 border border-slate-600 rounded-lg pl-11 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
               <button
                 onClick={handleSave}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors flex items-center gap-2"
+                className="bg-primary hover:bg-secondary text-white font-medium px-6 py-3 rounded-lg transition-colors flex items-center gap-2"
               >
                 <Save className="w-5 h-5" />
                 保存
@@ -55,9 +55,9 @@ export default function SettingsPanel({ apiKey, onApiKeyChange }: SettingsPanelP
           </div>
 
           {/* API Key 说明 */}
-          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+          <div className="bg-primary/10 border border-primary/30 rounded-lg p-4">
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+              <AlertCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div className="text-sm text-blue-300">
                 <p className="font-medium mb-2">如何获取千问 API Key：</p>
                 <ol className="list-decimal list-inside space-y-1 text-blue-300/80">
@@ -76,26 +76,26 @@ export default function SettingsPanel({ apiKey, onApiKeyChange }: SettingsPanelP
           {/* 功能说明 */}
           <div className="border-t border-slate-700 pt-6">
             <h3 className="text-lg font-bold text-white mb-4">千问 API 功能</h3>
-            <div className="space-y-3 text-sm text-slate-300">
+            <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-1.5 flex-shrink-0" />
+                <div className="w-2 h-2 bg-primary rounded-full mt-1.5 flex-shrink-0" />
                 <div>
                   <span className="font-medium">智能结果解读：</span>
-                  <span className="text-slate-400 ml-2">使用千问大模型自动解读算法对比结果，生成专业的分析报告</span>
+                  <span className="text-gray-400 ml-2">使用千问大模型自动解读算法对比结果，生成专业的分析报告</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-1.5 flex-shrink-0" />
+                <div className="w-2 h-2 bg-primary rounded-full mt-1.5 flex-shrink-0" />
                 <div>
                   <span className="font-medium">生物标志物解释：</span>
-                  <span className="text-slate-400 ml-2">为识别出的关键基因提供生物学功能和临床意义解释</span>
+                  <span className="text-gray-400 ml-2">为识别出的关键基因提供生物学功能和临床意义解释</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-1.5 flex-shrink-0" />
+                <div className="w-2 h-2 bg-primary rounded-full mt-1.5 flex-shrink-0" />
                 <div>
                   <span className="font-medium">研究建议：</span>
-                  <span className="text-slate-400 ml-2">基于分析结果提供后续研究方向和实验设计建议</span>
+                  <span className="text-gray-400 ml-2">基于分析结果提供后续研究方向和实验设计建议</span>
                 </div>
               </div>
             </div>
@@ -104,9 +104,9 @@ export default function SettingsPanel({ apiKey, onApiKeyChange }: SettingsPanelP
           {/* 关于项目 */}
           <div className="border-t border-slate-700 pt-6">
             <h3 className="text-lg font-bold text-white mb-4">关于本项目</h3>
-            <div className="space-y-2 text-sm text-slate-400">
+            <div className="space-y-2 text-sm text-gray-400">
               <p>
-                本项目复现论文：<span className="text-slate-300 font-medium">Efficient discovery of robust prognostic biomarkers and signatures in solid tumors</span>
+                本项目复现论文：<span className="text-gray-300 font-medium">Efficient discovery of robust prognostic biomarkers and signatures in solid tumors</span>
               </p>
               <p>
                 对比算法：QBM-VAE（量子玻尔兹曼机-变分自编码器）vs 传统机器学习算法
@@ -115,7 +115,7 @@ export default function SettingsPanel({ apiKey, onApiKeyChange }: SettingsPanelP
                 数据集：SurvivalML（BRCA、CRC、LUAD、GBM、LUSC、DLBC）
               </p>
               <p className="mt-4 pt-4 border-t border-slate-700">
-                本项目由 <a href="https://www.aliyun.com/product/esa" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">阿里云ESA</a> 提供边缘计算支持
+                本项目由 <a href="https://www.aliyun.com/product/esa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">阿里云ESA</a> 提供边缘计算支持
               </p>
             </div>
           </div>
